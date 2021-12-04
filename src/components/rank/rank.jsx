@@ -8,7 +8,7 @@ function rank(props) {
             <h3>Ranking table</h3>
             <ol>
                 {provinceData.map(e => {
-                    return <li>{e.province} {e.cumulativeCases}</li>
+                    return <li key={e.province}>{e.province} {e.cumulativeCases}</li>
                 })}
             </ol>
         </div>

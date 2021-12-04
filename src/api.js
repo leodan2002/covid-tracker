@@ -10,7 +10,7 @@ export const fetchAllData = async() => {
     return response.data;
 }
 
-
+// fetching data for the infox boxes
 export const fetchProvinceData = async(province) => {
     const response = await axios.get(`${URL}/summary`);
     
@@ -27,6 +27,7 @@ export const fetchProvinceData = async(province) => {
 
 }
 
+// fetching the data for the ranking table
 export const fetchAllProvinceCumulativeCases = async() => {
     const response = await axios.get(`${URL}/summary`);
 
@@ -59,6 +60,54 @@ export const fetchAllProvinceCumulativeCases = async() => {
         {province : "Saskatchewan" , cumulativeCases : saskatchewanData.cumulative_cases},
         {province : "Yukon" , cumulativeCases : yukonData.cumulative_cases},
     ]
+}
+
+const provinceConverter = (province) => {
+    if (province === "Alberta") {
+        return "AB"
+    } else if (province === "BC") {
+        return "BC"
+    } else if (province === "Manitoba") {
+        return "MB"
+    } else if (province === "New Brunswick") {
+        return "NB"
+    } else if (province === "NL") {
+        return "NL"
+    } else if (province === "Nova Scotia"){
+        return "NS"
+    } else if (province === "Nunavut") {
+        return "NU"
+    } else if (province === "NWT") {
+        return "NT"
+    } else if (province === "Ontario"){
+        return "ON"
+    } else if (province === "PEI"){
+        return "PE"
+    } else if (province === "Quebec"){
+        return "QC"
+    } else if (province === "Saskatchewan"){
+        return "SK"
+    } else if (province === "Yukon"){
+        return "YT"
+    } else {
+        console.log("Invalid Province")
+    }
+}
+
+export const fetchTimeSeriesData = async(province) => {
+    const response = await axios.get(`${URL}/timeseries?loc=${provinceConverter(province)}&after=2021-01-01&stat=active`);
+    console.log("timeseries data",response);
+
+    return response.data.active.map((e)=>{
+        return {
+            cases: e.cumulative_cases,
+            deaths: e.cumulative_deaths,
+            recovered: e.cumulative_recovered,
+            date: e.date_active
+        }
+    }) 
+    
+    
 }
 // Alberta, BC, Manitoba, New Brunswick, NL, Nova Scotia, Nunavut, NWT, Ontario, PEI, Quebec, Saskatchewan, Yukon
 

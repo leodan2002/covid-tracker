@@ -37,9 +37,7 @@ function dropdown(props) {
                 <option value="PEI">
                     PEI
                 </option>
-                
                 <option value="Quebec">
-                    
                     Quebec
                 </option>
                 <option value="Saskatchewan">
