@@ -62,7 +62,7 @@ function App() {
     updateInfoBoxData()
     updateChartData()
 
-  }, [province, typeSelected])
+  }, [province])
 
 
   // info box function

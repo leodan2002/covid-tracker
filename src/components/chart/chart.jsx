@@ -34,26 +34,64 @@ function chart(props) {
 
     const labels = data.map(e => (e.date));
 
+    const getDataset = () => {
+        const casesDataset = {
+            label: 'Active Cases',
+            data: data.map((e) => e.cases),
+            borderColor: 'red',
+            backgroundColor: 'red',
+          }
+        const recoveredDataset = {
+            label: 'Recovred',
+            data: data.map((e) => e.recovered),
+            borderColor: 'green',
+            backgroundColor: 'green',
+          }
+        const deathDataset = {
+            label: 'Deaths',
+            data: data.map((e) => e.deaths),
+            borderColor: 'blue',
+            backgroundColor: 'blue',
+          }
+        if (type === "main") {
+            return [casesDataset, recoveredDataset, deathDataset]
+        }
+        else if (type === "mini" && selected === "cases") {
+            return [casesDataset]
+        }
+        else if (type === "mini" && selected === "recovered") {
+            return [recoveredDataset]
+        }
+        else if (type === "mini" && selected === "deaths") {
+            return [deathDataset]
+        }
+    }
+
+    
+
  const dataChart = {
   labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: data.map((e) => e.cases),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    }
-  ],
+  datasets: getDataset()
 };
 
-const options = {};
+
+
+    const getOptions = () => {
+        if (type === "mini") {
+            return {};
+        } else {
+            return { animation: {
+                duration: 0
+            }};
+        }
+    }
 
 
     console.log("chart data", dataChart);
     return (
         data.length === 0 ? "Loading ..." : 
             <div>
-                <Line options={options} data={dataChart} />;
+                <Line options={getOptions()} data={dataChart} />
             </div>
         
         
