@@ -75,7 +75,7 @@ function App() {
     <div className="app">
       <div className="app-left"> 
         <div className="app-header">
-         <h1>Covid Tracker</h1>
+         <h1 className="app-title">Covid Tracker</h1>
          <DropDown 
           value = {province}
           handleChange = {(event) => {
@@ -89,19 +89,22 @@ function App() {
               dailyData = {infoBoxData.cases}
               cummulativeData = {infoBoxData.cumulativeCases}
               handleClick = {() => setTypeSelected("cases")}
+              borderColor = "blue"
             />
             <InfoBox
               title = 'Recovery'
               dailyData = {infoBoxData.recovered}
               cummulativeData = {infoBoxData.cumulativeRecovered} 
               handleClick = {() => setTypeSelected("recovered")}
-
+              borderColor = "green"
+              
             />
             <InfoBox 
               title = 'Death'
               dailyData = {infoBoxData.deaths}
               cummulativeData = {infoBoxData.cumulativeDeaths}
               handleClick = {() => setTypeSelected("deaths")}
+              borderColor = "red"
 
             />
         </div>
@@ -114,7 +117,7 @@ function App() {
       </div>
 
       <div className="app-right"> 
-        <h2>Cases</h2>
+        <h2>Live Cases by Province</h2>
         <div className="app-ranking">
           <Rank 
             provinceData = {allProvinceCumulativeCases}  

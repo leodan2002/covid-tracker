@@ -1,4 +1,5 @@
 import React from 'react'
+import "./dropDown.css"
 
 function dropdown(props) {
     const value = props.value;
@@ -6,7 +7,7 @@ function dropdown(props) {
 
     return (
         <div>
-            <select value={value} onChange={handleChange}>
+            <select className="dropdown-wrapper" value={value} onChange={handleChange}>
                 <option value="Ontario">
                     Ontario
                 </option>

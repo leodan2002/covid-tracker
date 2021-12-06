@@ -5,7 +5,6 @@ function rank(props) {
 
     return (
         <div>
-            <h3>Ranking table</h3>
             <ol>
                 {provinceData.map(e => {
                     return <li key={e.province}>{e.province} {e.cumulativeCases}</li>

@@ -6,12 +6,14 @@ function infoBox(props) {
     const dailyData = props.dailyData;
     const cummulativeData = props.cummulativeData;
     const handleClick = props.handleClick;
+    const borderColor = props.borderColor;
 
     return (
-        <div className="infoBoxWrapper" onClick={handleClick}>
+        <div className="infoBoxWrapper" onClick={handleClick} style={{borderTop: `10px solid ${borderColor}`}}>
             <h3>{title}</h3>
-            <p>{dailyData}</p>
+            <p>+{dailyData}</p>
             <p>{cummulativeData}</p>
+
         </div>
     )
 }

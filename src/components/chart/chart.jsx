@@ -38,8 +38,8 @@ function chart(props) {
         const casesDataset = {
             label: 'Active Cases',
             data: data.map((e) => e.cases),
-            borderColor: 'red',
-            backgroundColor: 'red',
+            borderColor: 'blue',
+            backgroundColor: 'blue',
           }
         const recoveredDataset = {
             label: 'Recovred',
@@ -50,8 +50,8 @@ function chart(props) {
         const deathDataset = {
             label: 'Deaths',
             data: data.map((e) => e.deaths),
-            borderColor: 'blue',
-            backgroundColor: 'blue',
+            borderColor: 'red',
+            backgroundColor: 'red',
           }
         if (type === "main") {
             return [casesDataset, recoveredDataset, deathDataset]

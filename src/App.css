@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f5f6fa;
 }
 
 .app {
@@ -15,12 +16,23 @@
 
 .app-right {
   width: 30vw;
+  border: 1px solid black;
+  margin: 30px;
+  padding: 10px;
+}
+
+.app-ranking {
+  padding-left: 25px;
 }
 
 .app-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 20px;
+}
+
+.app-title {
 }
 
 .app-stats {
