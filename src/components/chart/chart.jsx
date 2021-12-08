@@ -26,9 +26,6 @@ import {
 
 function chart(props) {
 
-    
-
-
     const {data, type, selected} = props;
 
 

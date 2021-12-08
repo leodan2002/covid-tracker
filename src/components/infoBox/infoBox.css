@@ -1,9 +1,28 @@
 .infoBoxWrapper:hover {
   cursor: pointer;
 }
+
 .infoBoxWrapper {
   border: 1px solid black;
   padding: 20px;
   width: 20vw;
   border-radius: 10px;
+  text-align: center;
+  background-color: rgb(230, 230, 230);
+}
+
+.infoBoxTitle {
+  font-size: 25px;
+  background-color: rgb(230, 230, 230);
+}
+
+.dailyCases {
+  font-size: 35px;
+  font-weight: bold;
+  background-color: rgb(230, 230, 230);
+}
+
+.totalCases {
+  font-size: 20px;
+  background-color: rgb(230, 230, 230);
 }

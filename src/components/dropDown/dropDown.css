@@ -1,4 +1,7 @@
 .dropdown-wrapper {
   width: 10vw;
   font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  cursor: pointer;
 }

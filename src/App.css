@@ -19,6 +19,8 @@
   border: 1px solid black;
   margin: 30px;
   padding: 10px;
+  background-color: rgb(230, 230, 230);
+  border-radius: 10px;
 }
 
 .app-ranking {
@@ -30,6 +32,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
+  font-size: 40px;
 }
 
 .app-title {
@@ -39,4 +42,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.ranking-title {
+  font-size: 30px;
+  background-color: rgb(230, 230, 230);
 }

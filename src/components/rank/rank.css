@@ -1,0 +1,23 @@
+.ranking-table {
+  margin: 20px 0px;
+  background-color: rgb(230, 230, 230);
+}
+
+.ranking-list {
+  list-style-type: none;
+}
+
+.table-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.provinces-names {
+}
+
+.cases-numbers {
+  font-weight: bold;
+  display: contents;
+}

@@ -90,6 +90,7 @@ function App() {
               cummulativeData = {infoBoxData.cumulativeCases}
               handleClick = {() => setTypeSelected("cases")}
               borderColor = "blue"
+              dailyCasesColor = "blue"
             />
             <InfoBox
               title = 'Recovery'
@@ -97,6 +98,8 @@ function App() {
               cummulativeData = {infoBoxData.cumulativeRecovered} 
               handleClick = {() => setTypeSelected("recovered")}
               borderColor = "green"
+              dailyCasesColor = "green"
+
               
             />
             <InfoBox 
@@ -105,6 +108,8 @@ function App() {
               cummulativeData = {infoBoxData.cumulativeDeaths}
               handleClick = {() => setTypeSelected("deaths")}
               borderColor = "red"
+              dailyCasesColor = "red"
+
 
             />
         </div>
@@ -117,7 +122,7 @@ function App() {
       </div>
 
       <div className="app-right"> 
-        <h2>Live Cases by Province</h2>
+        <h2 className="ranking-title">Live Cases by Province</h2>
         <div className="app-ranking">
           <Rank 
             provinceData = {allProvinceCumulativeCases}  
