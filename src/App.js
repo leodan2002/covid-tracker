@@ -34,19 +34,12 @@ function App() {
   const [typeSelected, setTypeSelected] = useState("cases");
 
 
-  // chart function
-  async function updateChartData(){
-    const timeSeriesData = await fetchTimeSeriesData(province);
-    setChartData(timeSeriesData);
-    
-    
-    
-  } 
+   
 
   // ranking table function
   async function updateRankedData(){
     const cumulativeCases = await fetchAllProvinceCumulativeCases();
-    const sortedCumulativeCases = cumulativeCases.sort((a, b) => {
+     cumulativeCases.sort((a, b) => {
       return b.cumulativeCases - a.cumulativeCases;
     })
     setAllProvinceCumulativeCases(cumulativeCases);
@@ -59,6 +52,15 @@ function App() {
   }, [])
 
   useEffect(()=> {
+    async function updateInfoBoxData(){
+      const provinceData = await fetchProvinceData(province);
+      setInfoBoxData(provinceData);
+    }
+    // chart function
+  async function updateChartData(){
+    const timeSeriesData = await fetchTimeSeriesData(province);
+    setChartData(timeSeriesData); 
+  }
     updateInfoBoxData()
     updateChartData()
 
@@ -66,10 +68,7 @@ function App() {
 
 
   // info box function
-  async function updateInfoBoxData(){
-    const provinceData = await fetchProvinceData(province);
-    setInfoBoxData(provinceData);
-  }
+ 
 
   return (
     <div className="app">
